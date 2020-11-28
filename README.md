@@ -3,6 +3,18 @@
 Simple Android app purely based on **MVVM** architecture recommended by **Google** for Android applications. 
 This App uses android architectire components from jetpack to demonstrate MVVM in action.
 
+## Thoughts on architecture
+
+As mentioned above, MVVM is the architecture that suits well for any kind & level of Android applications, there are alot of support
+libraries from jetpack that work well especially in context of MVVM.
+
+MVVM stands on the below mentioned principles
+* Separation of concerns
+* Model should drive the UI
+* Assign one data source to be the Single source of truth
+* Persist Data to avoid wasting network resources
+* Layered architecture for testable Units 
+
 ## Libraries Used
 
 * [Databinding](https://developer.android.com/topic/libraries/data-binding/) - Declaratively bind data to UI elements directly within XMLs.
