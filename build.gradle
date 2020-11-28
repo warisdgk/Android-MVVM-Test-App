@@ -10,6 +10,7 @@ buildscript {
         retrofitVersion = '2.9.0'
         okhttpLoggingVersion = '4.8.1'
         roomVersion = "2.2.5"
+        lifeCycle = "2.2.0"
     }
 
     repositories {
@@ -18,6 +19,7 @@ buildscript {
     }
     dependencies {
         classpath "com.android.tools.build:gradle:4.1.1"
+        //noinspection DifferentKotlinGradleVersion
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
         classpath "com.google.dagger:hilt-android-gradle-plugin:$hiltVersion"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navVersion"
