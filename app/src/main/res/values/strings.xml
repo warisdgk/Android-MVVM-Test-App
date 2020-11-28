@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Test App</string>
+    <string name="btn_send">Send</string>
+    <string name="enter_post_id">Enter Post Id</string>
+    <string name="error_msg_empty_post_id">Post id can\'t be empty</string>
+    <string name="error_msg_empty_content">Title or body content is empty</string>
+</resources>
