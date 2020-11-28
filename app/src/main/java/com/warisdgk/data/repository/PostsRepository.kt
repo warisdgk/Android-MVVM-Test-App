@@ -18,7 +18,7 @@ class PostsRepository @Inject constructor(
         saveCallResult = { localDataSource.insert(it) }
     )
 
-    fun getPostFromLocalSource(id: Int): LiveData<Post> {
+    fun getPostFromLocalDB(id: Int): LiveData<Post> {
         return localDataSource.getPost(id)
     }
 

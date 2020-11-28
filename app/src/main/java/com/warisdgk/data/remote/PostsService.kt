@@ -27,7 +27,7 @@ interface PostsService {
         private fun composeRetrofitBuilder(): PostsService {
 
             val logger =
-                HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY }
+                HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BASIC }
 
             val client = OkHttpClient.Builder()
                 .addInterceptor(logger)

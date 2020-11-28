@@ -13,7 +13,7 @@ class DetailsViewModel @ViewModelInject constructor(
     private val _id = MutableLiveData<Int>()
 
     private val _post = _id.switchMap { id ->
-        repository.getPostFromLocalSource(id)
+        repository.getPostFromLocalDB(id)
     }
     val localPost = _post
 
