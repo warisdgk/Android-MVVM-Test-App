@@ -8,12 +8,15 @@ This App uses android architectire components from jetpack to demonstrate MVVM i
 As mentioned above, MVVM is the architecture that suits well for any kind & level of Android applications, there are alot of support
 libraries from jetpack that work well especially in context of MVVM.
 
-MVVM stands on the below mentioned principles
+Single Activity and multiple fragments and also with use of **Navigation** library makes is super easy to pass data along and do the fragment
+transations. 
+
+MVVM stands on the below mentioned principles:
 * Separation of concerns
 * Model should drive the UI
 * Assign one data source to be the Single source of truth
 * Persist Data to avoid wasting network resources
-* Layered architecture for testable Units 
+* Layered architecture for testable Units
 
 ## Libraries Used
 
@@ -25,3 +28,29 @@ MVVM stands on the below mentioned principles
 * [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) - Holds asyncronous operations data and UI related data to with stand the configuration changes due to its scope.
 * [Kotlin-Coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html) - Helps in writing the code to perform asyncronous operations.
 * [Hilt](https://developer.android.com/training/dependency-injection/hilt-android) - Newly introduced library on top of Dagger two for [Depencency Inversion](https://developer.android.com/training/dependency-injection)
+
+## App Folder Structure
+
+```
+app/
+|- data/
+   |- entities
+   |- local
+   |- remote
+   |- repository
+|- di/
+|- ui/
+|- utils/
+-MainApplication
+```
+
+#### Folder Structure Explained
+
+1. **Data** - This folder will hold all the data related classes in it. This data can either be from Local store or from remote storage.
+1. **Entities** - This folder will have all the Entities of app as the DB models .
+1. **Local** - This folder will have all the related classes for Local DB.
+1. **remote** - This folder will have all the related classes for Remote data source and remote service that will fetch the data
+1. **repository** - This folder will have all the repsitories of different Screens in a specific app. A class one level below the ViewModels to delegate the data fetching work
+1. **di** - This folder will have Dependency Injection related Classes
+1. **ui** - UI will hold all the UI app components like Activities and Fragments
+1. **utils** - A space for utilities that will be used by all over the application
