@@ -26,12 +26,27 @@ interface PostsService {
 
         private fun composeRetrofitBuilder(): PostsService {
 
-            return Retrofit.Builder()
+            val logger =
+                HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY }
+
+            val client = OkHttpClient.Builder()
+                .addInterceptor(logger)
+                .build()
+
+            return if (BuildConfig.DEBUG) {
+                Retrofit.Builder()
+                    .baseUrl(BASE_URL)
+                    .client(client)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build()
+                    .create(PostsService::class.java)
+            } else {
+                Retrofit.Builder()
                     .baseUrl(BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
                     .create(PostsService::class.java)
-
+            }
 
         }
     }
