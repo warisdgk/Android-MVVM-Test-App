@@ -44,7 +44,7 @@ app/
 -MainApplication
 ```
 
-#### Folder Structure Explained
+#### - Folder Structure Explained
 
 1. **Data** - This folder will hold all the data related classes in it. This data can either be from Local store or from remote storage.
 1. **Entities** - This folder will have all the Entities of app as the DB models .
@@ -54,3 +54,8 @@ app/
 1. **di** - This folder will have Dependency Injection related Classes
 1. **ui** - UI will hold all the UI app components like Activities and Fragments
 1. **utils** - A space for utilities that will be used by all over the application
+
+## Commit Messages Format Inspiration
+For maitaing code and tracing the specific feature or a fix for the reference purpose becomes a hard thing even after using **Git** due to poorly
+written commit messages. Just to keep thing tidy I prefer to use the following format: [Scemantice Commit Messages](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716)
+
