@@ -59,3 +59,7 @@ app/
 For maitaing code and tracing the specific feature or a fix for the reference purpose becomes a hard thing even after using **Git** due to poorly
 written commit messages. Just to keep thing tidy I prefer to use the following format: [Scemantice Commit Messages](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716)
 
+## Author
+* Muhammad waris
+* Mobile Application Develper
+* Portfolio: [Muhammad waris](http://warisdgk.com/)
