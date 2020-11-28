@@ -18,6 +18,11 @@ MVVM stands on the below mentioned principles:
 * Persist Data to avoid wasting network resources
 * Layered architecture for testable Units
 
+
+![Image of MVVM Architecture](https://developer.android.com/topic/libraries/architecture/images/final-architecture.png)
+
+
+
 ## Libraries Used
 
 * [Databinding](https://developer.android.com/topic/libraries/data-binding/) - Declaratively bind data to UI elements directly within XMLs.
