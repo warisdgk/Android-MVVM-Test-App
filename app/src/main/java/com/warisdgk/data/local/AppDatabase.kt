@@ -12,6 +12,9 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun postDao(): PostDao
 
     companion object {
+
+        private const val DATABASE_NAME = "posts-db"
+
         @Volatile
         private var instance: AppDatabase? = null
 
@@ -23,7 +26,7 @@ abstract class AppDatabase : RoomDatabase() {
             }
 
         private fun buildDatabase(appContext: Context) =
-            Room.databaseBuilder(appContext, AppDatabase::class.java, "posts")
+            Room.databaseBuilder(appContext, AppDatabase::class.java, DATABASE_NAME)
                 .fallbackToDestructiveMigration()
                 .build()
     }
