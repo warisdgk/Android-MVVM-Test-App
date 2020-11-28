@@ -1,6 +1,6 @@
 package com.warisdgk.data.remote
 
-import com.warisdgk.utilities.Resource
+import com.warisdgk.utils.Resource
 import retrofit2.Response
 
 abstract class BaseDataSource {

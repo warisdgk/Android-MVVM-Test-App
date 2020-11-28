@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import com.warisdgk.data.entities.Post
 import com.warisdgk.data.local.PostDao
 import com.warisdgk.data.remote.PostsRemoteDataSource
-import com.warisdgk.utilities.performGetOperation
+import com.warisdgk.utils.performGetOperation
 import javax.inject.Inject
 
 class PostsRepository @Inject constructor(

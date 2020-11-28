@@ -1,4 +1,4 @@
-package com.warisdgk.utilities
+package com.warisdgk.utils
 
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.DefaultLifecycleObserver

@@ -1,4 +1,4 @@
-package com.warisdgk.utilities
+package com.warisdgk.utils
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData

@@ -15,8 +15,8 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.warisdgk.R
 import com.warisdgk.databinding.FragmentHomeBinding
-import com.warisdgk.utilities.Resource
-import com.warisdgk.utilities.autoCleared
+import com.warisdgk.utils.Resource
+import com.warisdgk.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
