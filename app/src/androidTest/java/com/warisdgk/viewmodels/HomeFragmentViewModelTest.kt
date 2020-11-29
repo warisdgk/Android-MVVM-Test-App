@@ -1,4 +1,4 @@
-package com.warisdgk
+package com.warisdgk.viewmodels
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.room.Room
