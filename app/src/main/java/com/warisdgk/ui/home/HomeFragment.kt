@@ -47,13 +47,13 @@ class HomeFragment : Fragment() {
                     binding.progressBar.visibility = View.GONE
                     binding.btnSend.isEnabled = true
 
-//                    if (viewModel.allowNavigate) {
+                    if (viewModel.allowNavigate) {
                         if (it.data?.title.isNullOrEmpty() || it.data?.body.isNullOrEmpty()) {
                             showToast(getString(R.string.error_msg_empty_content))
                         } else {
                             navigateToDetails(it.data?.id)
                         }
-//                    }
+                    }
                 }
 
                 Resource.Status.ERROR -> {
