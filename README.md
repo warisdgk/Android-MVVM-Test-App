@@ -3,6 +3,17 @@
 Simple Android app purely based on **MVVM** architecture recommended by **Google** for Android applications. 
 This App uses android architecture components from jetpack to demonstrate MVVM in action.
 
+
+
+
+
+
+![Project Screens](https://www.linkpicture.com/q/Screenshot-2020-11-29-at-5.15.41-PM_1.png)
+
+
+
+
+
 ## Thoughts on architecture
 
 As mentioned above, MVVM is the architecture that suits well for any kind & level of Android applications, there are a lot of support
