@@ -45,20 +45,33 @@ class HomeFragment : Fragment() {
         binding.btnSend.setOnClickListener {
             activity?.hideKeyboard(binding.btnSend)
             val postId = binding.etPostId.text.toString()
-            when {
-                postId.isBlank() -> {
-                    showToast(getString(R.string.error_msg_empty_post_id))
-                }
-                getPostIdAsInt(postId) == -1 -> {
-                    showToast(getString(R.string.error_msg_invalid_post_id))
-                }
-                else -> {
-                    viewModel.allowNavigate = true
-                    binding.btnSend.isEnabled = false
-                    viewModel.setPostId(getPostIdAsInt(postId))
-                }
+            val isValidPostId = isValidInput(postId)
+            if (isValidPostId) {
+                viewModel.allowNavigate = true
+                binding.btnSend.isEnabled = false
+                viewModel.setPostId(getPostIdAsInt(postId))
             }
         }
+    }
+
+    private fun isValidInput(postId: String): Boolean {
+        if (postId.isBlank()) {
+            showToast(getString(R.string.error_msg_empty_post_id))
+            return false
+        }
+
+        val id = try {
+            postId.toInt()
+        } catch (exception: NumberFormatException) {
+            Timber.tag(TAG).d(exception)
+            -1
+        }
+
+        if (id == -1 || id == 0) {
+            showToast(getString(R.string.error_msg_invalid_post_id))
+            return false
+        }
+        return true
     }
 
     private fun getPostIdAsInt(postId: String): Int {
