@@ -16,4 +16,5 @@ class NetworkModule {
     fun providePostsService(): PostsService {
         return PostsService.create()
     }
+
 }

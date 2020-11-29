@@ -40,6 +40,20 @@ class HomeFragment : Fragment() {
         setupPostObserver()
     }
 
+    private fun setupSendButton() {
+        binding.btnSend.setOnClickListener {
+            activity?.hideKeyboard(binding.btnSend)
+            val postId = binding.etPostId.text.toString()
+            if (isValidInput(postId)) {
+                viewModel.allowNavigate = true
+                binding.btnSend.isEnabled = false
+                viewModel.setPostId(postId.toInt())
+            } else {
+                showToast(getString(R.string.error_msg_empty_post_id))
+            }
+        }
+    }
+
     private fun setupPostObserver() {
         viewModel.postData.observe(viewLifecycleOwner, Observer {
             when (it.status) {
@@ -67,20 +81,6 @@ class HomeFragment : Fragment() {
                 }
             }
         })
-    }
-
-    private fun setupSendButton() {
-        binding.btnSend.setOnClickListener {
-            activity?.hideKeyboard(binding.btnSend)
-            val postId = binding.etPostId.text.toString()
-            if (isValidInput(postId)) {
-                viewModel.allowNavigate = true
-                binding.btnSend.isEnabled = false
-                viewModel.setPostId(postId.toInt())
-            } else {
-                showToast(getString(R.string.error_msg_empty_post_id))
-            }
-        }
     }
 
     private fun isValidInput(postId: String?): Boolean {

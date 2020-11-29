@@ -15,7 +15,7 @@ class DetailsViewModel @ViewModelInject constructor(
     private val _post = _id.switchMap { id ->
         repository.getPostFromLocalDB(id)
     }
-    val localPost = _post
+    val post = _post
 
     fun setPostId(postId: Int) {
         _id.value = postId

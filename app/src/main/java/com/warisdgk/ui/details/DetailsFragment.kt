@@ -10,12 +10,13 @@ import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import com.warisdgk.data.entities.Post
 import com.warisdgk.databinding.FragmentDetailsBinding
+import com.warisdgk.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class DetailsFragment : Fragment() {
 
-    private lateinit var binding: FragmentDetailsBinding
+    private var binding: FragmentDetailsBinding by autoCleared()
     private val viewModel: DetailsViewModel by viewModels()
 
     override fun onCreateView(
@@ -30,7 +31,7 @@ class DetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupLocalPostObserver()
+        setupPostObserver()
         arguments?.getInt(KEY_POST_ID)?.let { viewModel.setPostId(it) }
     }
 
@@ -40,8 +41,8 @@ class DetailsFragment : Fragment() {
         }
     }
 
-    private fun setupLocalPostObserver() {
-        viewModel.localPost.observe(viewLifecycleOwner, Observer {
+    private fun setupPostObserver() {
+        viewModel.post.observe(viewLifecycleOwner, Observer {
             bindPost(it)
         })
     }
