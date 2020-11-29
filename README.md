@@ -39,6 +39,7 @@ MVVM stands on the below-mentioned principles:
 * [Kotlin-Coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html) - Helps in writing the code to perform asynchronous operations.
 * [Hilt](https://developer.android.com/training/dependency-injection/hilt-android) - Newly introduced library on top of Dagger two for [Depencency Inversion](https://developer.android.com/training/dependency-injection)
 * [Espresso](https://developer.android.com/training/testing/espresso) - Library that helps to write concise, beautiful, and reliable Android UI tests.
+* [Timber](https://github.com/JakeWharton/timber) - A logger library with a small, extensible API which provides utility on top of Android's normal Log class.
 
 ## App Folder Structure
 
