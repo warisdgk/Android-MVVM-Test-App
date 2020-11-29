@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">Test App</string>
+
+    <!--Home Fragment-->
     <string name="btn_send">Send</string>
     <string name="enter_post_id">Enter Post Id</string>
     <string name="error_msg_empty_post_id">Post id can\'t be empty</string>
     <string name="error_msg_empty_content">Title or body content is empty</string>
+
+    <!--Details Fragment-->
+    <string name="title_details_fragment">Post Details</string>
 </resources>
