@@ -25,6 +25,7 @@ MVVM stands on the below-mentioned principles:
 
 ## Libraries Used
 
+* [Retrofit](https://square.github.io/retrofit/) - A type-safe HTTP client for Android to perfrom Network Requests
 * [Databinding](https://developer.android.com/topic/libraries/data-binding/) - Declaratively bind data to UI elements directly within XMLs.
 * [LifeCycles](https://developer.android.com/topic/libraries/architecture/lifecycle) - Helps in creating a UI that is android components lifecycle aware.
 * [LiveData](https://developer.android.com/topic/libraries/architecture/livedata) - Helps in updating views when underlying Data changes using the observer pattern.
@@ -33,6 +34,7 @@ MVVM stands on the below-mentioned principles:
 * [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) - Holds asynchronous operations data and UI related data to withstand the configuration changes due to its scope.
 * [Kotlin-Coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html) - Helps in writing the code to perform asynchronous operations.
 * [Hilt](https://developer.android.com/training/dependency-injection/hilt-android) - Newly introduced library on top of Dagger two for [Depencency Inversion](https://developer.android.com/training/dependency-injection)
+* [Espresso](https://developer.android.com/training/testing/espresso) - Library that helps to write concise, beautiful, and reliable Android UI tests.
 
 ## App Folder Structure
 
