@@ -44,13 +44,17 @@ class HomeFragment : Fragment() {
     private fun setupSendButton() {
         binding.btnSend.setOnClickListener {
             activity?.hideKeyboard(binding.btnSend)
-            val postId = binding.etPostId.text.toString()
-            val isValidPostId = isValidInput(postId)
-            if (isValidPostId) {
-                viewModel.allowNavigate = true
-                binding.btnSend.isEnabled = false
-                viewModel.setPostId(getPostIdAsInt(postId))
-            }
+            fetchPost()
+        }
+    }
+
+    private fun fetchPost() {
+        val postId = binding.etPostId.text.toString()
+        val isValidPostId = isValidInput(postId)
+        if (isValidPostId) {
+            viewModel.allowNavigate = true
+            binding.btnSend.isEnabled = false
+            viewModel.setPostId(getIntPostId(postId))
         }
     }
 
@@ -74,7 +78,7 @@ class HomeFragment : Fragment() {
         return true
     }
 
-    private fun getPostIdAsInt(postId: String): Int {
+    private fun getIntPostId(postId: String): Int {
         return try {
             postId.toInt()
         } catch (exception: NumberFormatException) {
