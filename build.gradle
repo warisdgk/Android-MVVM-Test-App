@@ -12,6 +12,7 @@ buildscript {
         roomVersion = "2.2.5"
         lifeCycle = "2.2.0"
         coreTestingVersion = "2.1.0"
+        timber = "4.7.1"
     }
 
     repositories {
