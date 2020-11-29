@@ -13,7 +13,7 @@ abstract class AppDatabase : RoomDatabase() {
 
     companion object {
 
-        private const val DATABASE_NAME = "posts-db"
+        const val DATABASE_NAME = "posts-db"
 
         @Volatile
         private var instance: AppDatabase? = null

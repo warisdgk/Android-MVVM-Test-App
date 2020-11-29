@@ -18,7 +18,8 @@ interface PostsService {
     ): Response<Post>
 
     companion object {
-        private const val BASE_URL = "https://jsonplaceholder.typicode.com/"
+
+        const val BASE_URL = "https://jsonplaceholder.typicode.com/"
 
         fun create(): PostsService {
             return composeRetrofitBuilder()
