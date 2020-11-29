@@ -7,6 +7,7 @@ import androidx.test.platform.app.InstrumentationRegistry
 import com.warisdgk.data.entities.Post
 import com.warisdgk.data.local.AppDatabase
 import com.warisdgk.data.local.PostDao
+import com.warisdgk.utils.getValue
 import kotlinx.coroutines.runBlocking
 import org.hamcrest.CoreMatchers
 import org.junit.After

@@ -1,4 +1,4 @@
-package com.warisdgk
+package com.warisdgk.utils
 
 import androidx.lifecycle.LiveData
 import java.util.concurrent.CountDownLatch
