@@ -11,7 +11,7 @@ buildscript {
         okhttpLoggingVersion = '4.8.1'
         roomVersion = "2.2.5"
         lifeCycle = "2.2.0"
-        coreTestingVersion = "2.0.0"
+        coreTestingVersion = "2.1.0"
     }
 
     repositories {
