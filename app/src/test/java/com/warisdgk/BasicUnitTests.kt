@@ -12,22 +12,22 @@ import org.junit.Assert.*
 class BasicUnitTests {
 
     @Test
-    fun test_base_url() {
+    fun testBaseUrl() {
         assertEquals("https://jsonplaceholder.typicode.com/", PostsService.BASE_URL)
     }
 
     @Test
-    fun test_db_name() {
+    fun testDBName() {
         assertEquals("posts-db", AppDatabase.DATABASE_NAME)
     }
 
     @Test
-    fun test_home_arg_key() {
+    fun testHomeFragArgKey() {
         assertEquals("postId", HomeFragment.KEY_POST_ID)
     }
 
     @Test
-    fun test_details_arg_key() {
+    fun testDetailsFragArgKey() {
         assertEquals("postId", DetailsFragment.KEY_POST_ID)
     }
 
