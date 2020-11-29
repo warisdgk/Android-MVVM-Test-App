@@ -18,6 +18,7 @@ import com.warisdgk.databinding.FragmentHomeBinding
 import com.warisdgk.utils.Resource
 import com.warisdgk.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
@@ -44,13 +45,28 @@ class HomeFragment : Fragment() {
         binding.btnSend.setOnClickListener {
             activity?.hideKeyboard(binding.btnSend)
             val postId = binding.etPostId.text.toString()
-            if (isValidInput(postId)) {
-                viewModel.allowNavigate = true
-                binding.btnSend.isEnabled = false
-                viewModel.setPostId(postId.toInt())
-            } else {
-                showToast(getString(R.string.error_msg_empty_post_id))
+            when {
+                postId.isBlank() -> {
+                    showToast(getString(R.string.error_msg_empty_post_id))
+                }
+                getPostIdAsInt(postId) == -1 -> {
+                    showToast(getString(R.string.error_msg_invalid_post_id))
+                }
+                else -> {
+                    viewModel.allowNavigate = true
+                    binding.btnSend.isEnabled = false
+                    viewModel.setPostId(getPostIdAsInt(postId))
+                }
             }
+        }
+    }
+
+    private fun getPostIdAsInt(postId: String): Int {
+        return try {
+            postId.toInt()
+        } catch (exception: NumberFormatException) {
+            Timber.tag(TAG).d(exception)
+            -1
         }
     }
 
@@ -83,10 +99,6 @@ class HomeFragment : Fragment() {
         })
     }
 
-    private fun isValidInput(postId: String?): Boolean {
-        return !postId.isNullOrBlank()
-    }
-
     private fun navigateToDetails(postId: Int?) {
         findNavController().navigate(
             R.id.action_homeFragment_to_detailsFragment,
@@ -107,6 +119,7 @@ class HomeFragment : Fragment() {
 
     companion object {
         const val KEY_POST_ID = "postId"
+        private const val TAG = "HomeFragment"
     }
 
 }
